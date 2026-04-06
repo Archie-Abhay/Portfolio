@@ -1,4 +1,4 @@
-// Cursor Animation
+
 const cursor = document.querySelector('#custom-cursor');
 const blur = document.querySelector('#cursor-blur');
 
@@ -9,12 +9,16 @@ document.addEventListener('mousemove', (e) => {
     blur.style.top = e.y - 200 + 'px';
 });
 
-// Scroll Animations
+
+
 ScrollReveal().reveal('.hero-content', { delay: 200, origin: 'bottom', distance: '50px' });
 ScrollReveal().reveal('.skill-card', { interval: 100, origin: 'top', distance: '30px' });
 ScrollReveal().reveal('.project-card', { delay: 300, scale: 0.8 });
 
-// Interactive Hover Effects
+
+
+
+// hoverr changess
 const links = document.querySelectorAll('.btn, .nav-links a, .skill-card');
 links.forEach(link => {
     link.addEventListener('mouseenter', () => {
@@ -29,7 +33,10 @@ links.forEach(link => {
     });
 });
 
-// Animate Contact Elements
+
+//  for Animation
+
+
 ScrollReveal().reveal('.contact-form', { 
     delay: 200, 
     origin: 'left', 
@@ -43,7 +50,8 @@ ScrollReveal().reveal('.info-tile', {
     interval: 200 
 });
 
-// Magnetic effect for social buttons (Optional Fun)
+
+
 const socialBtns = document.querySelectorAll('.social-item');
 socialBtns.forEach(btn => {
     btn.addEventListener('mousemove', (e) => {
