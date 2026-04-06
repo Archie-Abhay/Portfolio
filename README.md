@@ -1,3 +1,2 @@
-# Spotify_Clone
+# my portfolio
 
-# clone the spotify using html css
