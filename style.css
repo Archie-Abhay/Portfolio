@@ -1,3 +1,5 @@
+/* dont expect  me to write this css code by my own, yeah! i used chatgpt */
+
 :root {
     --bg-color: #0a0a0a;
     --accent-color: #00f2ff;
@@ -223,19 +225,33 @@ nav {
 }
 
 :root {
-    /* Base Colors */
-    --bg-color: #1a0033;           /* Deep Midnight Blue/Black */
-    --card-bg: #0d161f;            /* Slightly lighter navy for cards */
+   
+    --bg-color: #1a0033;           
+    --card-bg: #0d161f;            
     
-    /* Primary Accent: Classic "Tech" Emerald */
+    
     --accent-color: #ff007f;       
     --accent-glow: rgba(0, 255, 157, 0.4);
     
-    /* Secondary Accent: Electric Lime */
+   
     --secondary-accent: #bcff00;   
     
-    /* Text & UI */
+    
     --text-main: #e0e6ed;
     --text-dim: #8892b0;
     --border-glow: rgba(0, 255, 157, 0.15);
+}
+
+
+/* Target the source code link specifically or all anchor tags */
+.project-link, a {
+    color: var(--accent-color);    
+    text-decoration: none;         /* Removes the underline */
+    font-weight: 600;             
+    transition: 0.3s ease;         /*hover effect */
+}
+
+.project-link:hover, a:hover {
+    color: var(--secondary-accent); /* Changes color on hover */
+    text-shadow: 0 0 8px var(--accent-glow);
 }
