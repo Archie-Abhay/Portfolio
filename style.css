@@ -221,3 +221,21 @@ nav {
         grid-template-columns: 1fr;
     }
 }
+
+:root {
+    /* Base Colors */
+    --bg-color: #1a0033;           /* Deep Midnight Blue/Black */
+    --card-bg: #0d161f;            /* Slightly lighter navy for cards */
+    
+    /* Primary Accent: Classic "Tech" Emerald */
+    --accent-color: #ff007f;       
+    --accent-glow: rgba(0, 255, 157, 0.4);
+    
+    /* Secondary Accent: Electric Lime */
+    --secondary-accent: #bcff00;   
+    
+    /* Text & UI */
+    --text-main: #e0e6ed;
+    --text-dim: #8892b0;
+    --border-glow: rgba(0, 255, 157, 0.15);
+}
