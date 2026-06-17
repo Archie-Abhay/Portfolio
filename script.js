@@ -1,66 +1,93 @@
-
-const cursor = document.querySelector('#custom-cursor');
-const blur = document.querySelector('#cursor-blur');
-
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.x + 'px';
-    cursor.style.top = e.y + 'px';
-    blur.style.left = e.x - 200 + 'px';
-    blur.style.top = e.y - 200 + 'px';
+// ── Navbar scroll ──
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
 });
 
+// ── Mobile nav toggle ──
+const navToggle = document.getElementById('nav-toggle');
+const navLinks  = document.getElementById('nav-links');
+navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
+// ── Typewriter ──
+(function() {
+  const phrases = ['Software Developer'];
+  const el = document.getElementById('typewriter');
+  let pi = 0, ci = 0, deleting = false, wait = 0;
+  function type() {
+    const phrase = phrases[pi];
+    if (deleting) {
+      ci--;
+    } else {
+      ci++;
+    }
+    el.innerHTML = phrase.slice(0, ci) + '<span class="cursor"></span>';
+    let delay = deleting ? 60 : 90;
+    if (!deleting && ci === phrase.length) { deleting = true; delay = 1600; }
+    else if (deleting && ci === 0)         { deleting = false; pi = (pi + 1) % phrases.length; delay = 300; }
+    setTimeout(type, delay);
+  }
+  setTimeout(type, 1200);
+})();
 
-ScrollReveal().reveal('.hero-content', { delay: 200, origin: 'bottom', distance: '50px' });
-ScrollReveal().reveal('.skill-card', { interval: 100, origin: 'top', distance: '30px' });
-ScrollReveal().reveal('.project-card', { delay: 300, scale: 0.8 });
-
-
-
-
-// hoverr changess
-const links = document.querySelectorAll('.btn, .nav-links a, .skill-card');
-links.forEach(link => {
-    link.addEventListener('mouseenter', () => {
-        cursor.style.transform = 'scale(3)';
-        cursor.style.background = 'transparent';
-        cursor.style.border = '1px solid #00f2ff';
+// ── Particle canvas ──
+(function() {
+  const canvas = document.getElementById('particles');
+  const ctx = canvas.getContext('2d');
+  let W, H, particles;
+  function resize() {
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+  function Particle() {
+    this.x = Math.random() * W;
+    this.y = Math.random() * H;
+    this.r = Math.random() * 1.5 + 0.3;
+    this.vx = (Math.random() - 0.5) * 0.3;
+    this.vy = (Math.random() - 0.5) * 0.3;
+    this.a  = Math.random() * 0.5 + 0.1;
+  }
+  function init() {
+    resize();
+    particles = Array.from({ length: 80 }, () => new Particle());
+  }
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach(p => {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+      if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(0,212,255,${p.a})`;
+      ctx.fill();
     });
-    link.addEventListener('mouseleave', () => {
-        cursor.style.transform = 'scale(1)';
-        cursor.style.background = '#00f2ff';
-        cursor.style.border = 'none';
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener('resize', resize);
+  init(); draw();
+})();
+
+// ── Fade-up on scroll ──
+(function() {
+  const els = document.querySelectorAll('.fade-up');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        // stagger siblings
+        const siblings = e.target.parentElement.querySelectorAll('.fade-up');
+        let idx = 0;
+        siblings.forEach((s, si) => { if (s === e.target) idx = si; });
+        setTimeout(() => e.target.classList.add('visible'), idx * 80);
+        obs.unobserve(e.target);
+      }
     });
-});
+  }, { threshold: 0.12 });
+  els.forEach(el => obs.observe(el));
+})();
 
-
-//  for Animation
-
-
-ScrollReveal().reveal('.contact-form', { 
-    delay: 200, 
-    origin: 'left', 
-    distance: '100px' 
-});
-
-ScrollReveal().reveal('.info-tile', { 
-    delay: 200, 
-    origin: 'right', 
-    distance: '100px',
-    interval: 200 
-});
-
-
-
-const socialBtns = document.querySelectorAll('.social-item');
-socialBtns.forEach(btn => {
-    btn.addEventListener('mousemove', (e) => {
-        const position = btn.getBoundingClientRect();
-        const x = e.pageX - position.left - position.width / 2;
-        const y = e.pageY - position.top - position.height / 2;
-        btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-    });
-    btn.addEventListener('mouseout', () => {
-        btn.style.transform = `translate(0px, 0px)`;
-    });
-});
+// ── Back to top ──
+const btt = document.getElementById('back-top');
+window.addEventListener('scroll', () => btt.classList.toggle('show', window.scrollY > 400));
+btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));

@@ -1,120 +1,427 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhay Shukla | Full Stack Hustler</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel = "icon" type = "png" href = "logo.png" />
+<title>Abhay Shukla — Software Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<link href = "style.css" rel = "stylesheet" />
 </head>
 <body>
-    <div id="custom-cursor"></div>
-    <div id="cursor-blur"></div>
 
-    <nav>
-        <div class="logo">ARCHIE_<span>ABHAY</span></div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h3 class="glitch" data-text="HELLO, I AM">HELLO, I am your Developer</h3>
-            <h1>ABHAY SHUKLA</h1>
-            <p>Full Stack Developer | Python Enthusiast | B.Tech IT '28</p>
-            <div class="btn-group">
-                <a href="#projects" class="btn">View Projects</a>
-                <a href="mailto:abhay27.work@gmail.com" class="btn outline">Hire Me</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="skills">
-        <h2 class="section-title">Tech Stack</h2>
-        <div class="skill-grid">
-            <div class="skill-card">Python</div>
-            <div class="skill-card">JavaScript</div>
-            <div class="skill-card">Node.js</div>
-            <div class="skill-card">Java</div>
-            <div class="skill-card">C</div>
-            <div class="skill-card">HTML/CSS</div>
-            <div class="skill-card">Git/GitHub</div>
-            <div class="skill-card">Vercel</div>
-        </div>
-    </section>
-
-    <section id="projects" class="projects">
-        <h2 class="section-title">Featured Work</h2>
-        <div class="project-container">
-            <div class="project-card">
-                <h3>Yugant</h3>
-                <p>The Virtual Assistant built with Python. Intelligent, responsive, and powerful.</p>
-                <a href="https://github.com/Archie-Abhay/Yugant" class="project-link">Source Code →</a>
-            </div>
-            <div class="project-card">
-                <h3>Spotify Clone </h3>
-                <p>Clone of Spotify Homepage using HTML CSS</p>
-                <a href="https://github.com/Archie-Abhay/Spotify" class="project-link">Source Code →</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-    <h2 class="section-title">Initialize _Connection</h2>
-    <div class="contact-wrapper">
-        <div class="contact-form">
-            <form action="#">
-                <div class="input-box">
-                    <input type="text" placeholder="Your Name" required>
-                </div>
-                <div class="input-box">
-                    <input type="email" placeholder="Your Email" required>
-                </div>
-                <div class="input-box">
-                    <textarea placeholder="Your Message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn">Send Protocol</button>
-            </form>
-        </div>
-
-        <div class="contact-info">
-            <div class="info-tile">
-                <div class="tile-icon">📧</div>
-                <div class="tile-content">
-                    <span>Email</span>
-                    <p>abhay27.work@gmail.com</p>
-                </div>
-            </div>
-            <div class="info-tile">
-                <div class="tile-icon">📱</div>
-                <div class="tile-content">
-                    <span>Terminal</span>
-                    <p>+91 8874344044</p>
-                </div>
-            </div>
-            <div class="social-grid">
-               <a href="https://github.com/Archie-Abhay" class="social-item"><i class="fab fa-github"></i> GitHub</a>
-               <a href="https://www.linkedin.com/in/abhay-shukla-42309a326" class="social-item"><i class="fab fa-linkedin"></i> LinkedIn</a>
-    
-               <a href="https://wa.me/918874344044?text=Hi%20Abhay,%20I%20saw%20your%20portfolio!" 
-                 target="_blank" 
-                 class="social-item whatsapp-btn">
-                <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
-              </div>
-            
-        </div>
+<!-- ── NAV ── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo" style="font-family: sans-serif; font-weight: 200; letter-spacing: 3px;">Archie<span> </span>Abhay</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#certifications">Certs</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
     </div>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <canvas id="particles"></canvas>
+
+    <div class="hero-content">
+
+  <!-- ── existing hero text — wrap it in this div ── -->
+  <div class="hero-text">
+    <div class="hero-eyebrow">👋 &nbsp;Bonjour, I'm</div>
+    <h1 class="hero-name" style="font-family: sans-serif;">Abhay Shukla</h1>
+    <div class="hero-typewriter" id="typewriter"><span class="cursor"></span></div>
+    <p class="hero-tagline">"Writing clean code and real solutions."</p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">View My Work</a>
+      <a href="resume.pdf" class="btn btn-outline" target="_blank" rel="noopener">Download Resume</a>
+      <a href="#contact" class="btn btn-ghost">Contact Me</a>
+    </div>
+  </div>
+
+  <!-- ── NEW: photo on the right ── -->
+  <div class="hero-photo-wrap">
+    <div class="hero-photo-ring">
+      <!--
+        Replace "your-photo.jpg" with the actual path to your image.
+        If the HTML file and image are in the same folder, just use the filename.
+        Example: src="IMG_20260617_135332.jpg"
+      -->
+      <img
+        src="mine.jpg"
+        alt="Abhay Shukla"
+        class="hero-photo"
+      />
+    </div>
+  </div>
+
+</div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-dot"></div>
+    <span>Scroll</span>
+  </div>
 </section>
 
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div class="section-label">Who I am</div>
+      <h2 class="section-title">About Me</h2>
+    </div>
+    <div class="about-grid">
+      <div class="glass about-card fade-up">
+        <p>B.Tech IT student at REC Bijnor with a passion for building full-stack web apps, AI-powered tools, and clean, responsive interfaces. I write code that solves real problems.</p>
+        <div class="about-meta-title">Languages</div>
+        <ul class="about-list">
+          <li>🇬🇧 English — Fluent</li>
+          <li>🇮🇳 Hindi — Native</li>
+          <li>🇫🇷 French — Conversational</li>
+        </ul>
+        <div class="about-meta-title">Hobbies</div>
+        <ul class="about-list">
+          <li>✍️ Poetry</li>
+          <li>♟️ Chess</li>
+          <li>🏸 Badminton</li>
+          <li>🏏 Cricket</li>
+        </ul>
+      </div>
+      <div class="fade-up" style="display:flex;flex-direction:column;gap:1.2rem;">
+        <div class="glass about-card" style="padding:1.5rem;">
+          <div class="about-meta-title" style="margin-bottom:0.4rem;">Currently</div>
+          <p style="margin:0;font-size:0.9rem;">B.Tech Information Technology<br><span style="color:var(--accent);">REC Bijnor (AKTU)</span> · 2024–2028</p>
         </div>
-    </footer>
+        <div class="glass about-card" style="padding:1.5rem;">
+          <div class="about-meta-title" style="margin-bottom:0.4rem;">Location</div>
+          <p style="margin:0;font-size:0.9rem;">📍 Basti, Uttar Pradesh, India</p>
+        </div>
+        <div class="glass about-stat-row" style="padding:1.5rem;border-radius:16px;background:var(--glass);backdrop-filter:blur(16px);border:1px solid var(--border);">
+          <div class="about-stat">
+            <div class="num">3+</div>
+            <div class="lbl">Projects</div>
+          </div>
+          <div class="about-stat">
+            <div class="num">6+</div>
+            <div class="lbl">Tech Skills</div>
+          </div>
+          <div class="about-stat">
+            <div class="num">2</div>
+            <div class="lbl">Certs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script src="script.js"></script>
+<!-- ── SKILLS ── -->
+<section id="skills">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div class="section-label">What I work with</div>
+      <h2 class="section-title">Skills</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="glass skill-group fade-up">
+        <div class="skill-group-title">Languages</div>
+        <div class="skill-pills">
+          <span class="pill">Java</span>
+          <span class="pill">Python</span>
+          <span class="pill">C</span>
+          <span class="pill">JavaScript</span>
+        </div>
+      </div>
+      <div class="glass skill-group fade-up">
+        <div class="skill-group-title">Web</div>
+        <div class="skill-pills">
+          <span class="pill">HTML5</span>
+          <span class="pill">CSS3</span>
+          <span class="pill">Bootstrap 5</span>
+          <span class="pill">Node.js</span>
+          <span class="pill">Express.js</span>
+          <span class="pill">EJS</span>
+        </div>
+      </div>
+      <div class="glass skill-group fade-up">
+        <div class="skill-group-title">Databases</div>
+        <div class="skill-pills">
+          <span class="pill">MySQL</span>
+          <span class="pill">MongoDB</span>
+        </div>
+      </div>
+      <div class="glass skill-group fade-up">
+        <div class="skill-group-title">Tools</div>
+        <div class="skill-pills">
+          <span class="pill">Git</span>
+          <span class="pill">GitHub</span>
+          <span class="pill">VS Code</span>
+          <span class="pill">Vercel</span>
+          <span class="pill">REST APIs</span>
+          <span class="pill">Canva</span>
+        </div>
+      </div>
+      <div class="glass skill-group fade-up">
+        <div class="skill-group-title">AI & Automation</div>
+        <div class="skill-pills">
+          <span class="pill">Generative AI</span>
+          <span class="pill">Prompt Engineering</span>
+          <span class="pill">SerpAPI</span>
+          <span class="pill">AI Chatbot Dev</span>
+        </div>
+      </div>
+      <div class="glass skill-group fade-up">
+        <div class="skill-group-title">Concepts</div>
+        <div class="skill-pills">
+          <span class="pill">OOP</span>
+          <span class="pill">Data Structures</span>
+          <span class="pill">Algorithms</span>
+          <span class="pill">SDLC</span>
+          <span class="pill">Responsive Design</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROJECTS ── -->
+<section id="projects">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div class="section-label">What I've built</div>
+      <h2 class="section-title">Projects</h2>
+    </div>
+    <div class="projects-grid">
+      <!-- Card 1 -->
+      <div class="glass project-card fade-up">
+        <div class="project-num">01 / Project</div>
+        <h3 class="project-title">Yugant Virtual Assistant</h3>
+        <div class="project-stack">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">SerpAPI</span>
+          <span class="stack-tag">Speech Recognition</span>
+          <span class="stack-tag">TTS</span>
+        </div>
+        <p class="project-desc">A voice-activated Python assistant that processes natural language, automates web search via SerpAPI, and uses speech recognition + text-to-speech for hands-free interaction.</p>
+        <div class="project-footer">
+          <a href="https://github.com/Archie-Abhay/yugant" class="btn btn-outline" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="glass project-card fade-up">
+        <div class="project-num">02 / Project</div>
+        <h3 class="project-title">Spotify Clone</h3>
+        <div class="project-stack">
+          <span class="stack-tag">HTML5</span>
+          <span class="stack-tag">CSS3</span>
+          <span class="stack-tag">JavaScript</span>
+          <span class="stack-tag">Bootstrap 5</span>
+        </div>
+        <p class="project-desc">A fully responsive music streaming UI replicating Spotify's core experience — playlist rendering, playback controls, and real-time DOM interactions across all viewports.</p>
+        <div class="project-footer">
+          <a href="https://github.com/Archie-Abhay/Spotify" class="btn btn-outline" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="glass project-card fade-up">
+        <div class="project-num">03 / Project</div>
+        <h3 class="project-title">Computer Shop Website</h3>
+        <div class="project-stack">
+          <span class="stack-tag">HTML5</span>
+          <span class="stack-tag">CSS3</span>
+          <span class="stack-tag">Bootstrap</span>
+          <span class="stack-tag">JavaScript</span>
+        </div>
+        <p class="project-desc">A multi-page responsive business website with product listings, service pages, and a client-side validated contact form built to modern web standards.</p>
+        <div class="project-footer">
+          <a href="https://github.com/Archie-Abhay/Computer-Shop" class="btn btn-outline" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EDUCATION ── -->
+<section id="education">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div class="section-label">My journey</div>
+      <h2 class="section-title">Education</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item fade-up">
+        <div class="glass edu-card">
+          <div class="edu-degree">B.Tech — Information Technology</div>
+          <div class="edu-institution">REC Bijnor (AKTU)</div>
+          <div class="edu-meta">
+            <span>📅 2024–2028 (Expected)</span>
+            <span>⭐ CGPA: 7.5</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item fade-up">
+        <div class="glass edu-card">
+          <div class="edu-degree">B.Sc. — Math, Psychology & Computer Science</div>
+          <div class="edu-institution">University of Allahabad</div>
+          <div class="edu-meta">
+            <span>📅 2023–2024</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item fade-up">
+        <div class="glass edu-card">
+          <div class="edu-degree">Class XII — Science (PCM)</div>
+          <div class="edu-institution">CBS Inter College, Basti</div>
+          <div class="edu-meta">
+            <span>📅 2023</span>
+            <span>🏫 UP Board</span>
+            <span>✅ 81%</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item fade-up">
+        <div class="glass edu-card">
+          <div class="edu-degree">Class X</div>
+          <div class="edu-institution">CBS Inter College, Basti</div>
+          <div class="edu-meta">
+            <span>📅 2021</span>
+            <span>🏫 UP Board</span>
+            <span>✅ 91.8%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CERTIFICATIONS ── -->
+<section id="certifications">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div class="section-label">Credentials</div>
+      <h2 class="section-title">Certifications</h2>
+    </div>
+    <div class="certs-grid">
+      <div class="glass cert-card fade-up">
+        <div class="cert-icon">🤖</div>
+        <div class="cert-title">Generative AI for Beginners: Build AI Chatbot</div>
+        <div class="cert-issuer">Jenny's Lectures (Jayanti Khatri Lamba)</div>
+        <div class="cert-date">July 2025</div>
+        <a href="https://www.jennyslectures.com/share-certificate?serialno=Serial%20No:%2028062025G-AI46" class="btn btn-outline" target="_blank" rel="noopener" style="margin-top:0.5rem;">View Certificate ↗</a>
+      </div>
+      <div class="glass cert-card fade-up">
+        <div class="cert-icon">📊</div>
+        <div class="cert-title">Zomathon — The Data Hackathon (Participation)</div>
+        <div class="cert-issuer">Coding Ninjas × Eternal</div>
+        <div class="cert-date">2025</div>
+        <a href="https://blockseblock.com/certificate_preview/BSB-D0CFB9-MMA1WJGC" class="btn btn-outline" target="_blank" rel="noopener" style="margin-top:0.5rem;">View Certificate ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RESUME ── -->
+<section id="resume">
+  <div class="container">
+    <div class="section-head fade-up" style="text-align:center;">
+      <div class="section-label">Download</div>
+      <h2 class="section-title" style="margin:0 auto;">My Resume</h2>
+    </div>
+    <div class="glass resume-card fade-up">
+      <div class="resume-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="12" y1="18" x2="12" y2="12"/>
+          <line x1="9" y1="15" x2="15" y2="15"/>
+        </svg>
+      </div>
+      <h3>My Resume</h3>
+      <p>Download my latest resume in PDF format.</p>
+      <a href="resumeAbhayShukla.pdf" class="btn btn-primary" target="_blank" rel="noopener" style="margin:0 auto;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Resume (PDF)
+      </a>
+      <span class="resume-note">Last updated: June 2026</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="container">
+    <div class="section-head fade-up" style="text-align:center;">
+      <div class="section-label">Get in touch</div>
+      <h2 class="section-title" style="margin:0 auto;">Contact</h2>
+    </div>
+    <div class="glass contact-card fade-up">
+      <div class="contact-row">
+        <a href="mailto:abhay27.work@gmail.com" class="contact-item">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6" style="fill:none;stroke:#00d4ff;stroke-width:2"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">abhay27.work@gmail.com</div>
+          </div>
+        </a>
+      </div>
+      <div class="contact-buttons">
+        <a href="https://www.linkedin.com/in/abhay-shukla-42309a326" class="btn btn-outline" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/Archie-Abhay" class="btn btn-ghost" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <p class="footer-copy">© 2025 <span>Abhay Shukla</span>. Built with love.</p>
+    <div class="footer-socials">
+      <a href="https://www.linkedin.com/in/abhay-shukla-42309a326" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg width="16" height="16" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="https://github.com/Archie-Abhay" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ── BACK TO TOP ── -->
+<button id="back-top" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="script.js"></script>
 </body>
 </html>
