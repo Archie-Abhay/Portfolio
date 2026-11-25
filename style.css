@@ -201,11 +201,11 @@ section[id] {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 1.75rem;
+  gap: 1.25rem;
 }
 
 .nav-link {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.02em;
   color: var(--ink-secondary);
@@ -693,7 +693,156 @@ section[id] {
   justify-content: flex-end;
 }
 
-/* ── 11. RESUME SECTION (Brown Background) ── */
+/* ── 11. EXTRACURRICULAR SECTION (Ink Background) ── */
+#extracurricular {
+  border-bottom: 1px solid var(--hairline-on-dark);
+}
+
+.extra-group-inner {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 2.5rem;
+  padding: 3rem 0;
+  align-items: flex-start;
+}
+
+.extra-group-label {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cream-secondary);
+  opacity: 0.85;
+}
+
+.extra-group-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sports Medals */
+.extra-medal-row {
+  display: flex;
+  align-items: baseline;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.extra-medal-row:first-child {
+  padding-top: 0;
+}
+
+.extra-medal-row:last-child {
+  padding-bottom: 0;
+}
+
+.medal-word {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.8vw, 2.75rem);
+  line-height: 1;
+  min-width: 110px;
+  flex-shrink: 0;
+}
+
+.medal-gold {
+  color: var(--accent); /* Allowed large text */
+}
+
+.medal-bronze {
+  color: var(--cream);
+}
+
+.medal-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.medal-sport {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--cream);
+}
+
+.medal-event {
+  font-size: 0.9375rem;
+  color: var(--cream-secondary);
+}
+
+.hairline-sub {
+  margin: 0.75rem 0;
+  opacity: 0.6;
+}
+
+/* Clubs and Leadership */
+.club-role-line {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.4rem;
+}
+
+.club-role-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  color: var(--cream);
+  line-height: 1.2;
+}
+
+.club-role-inst {
+  font-size: 0.9375rem;
+  color: var(--cream-secondary);
+  opacity: 0.85;
+}
+
+.club-role-desc {
+  font-size: 1.0625rem;
+  color: var(--cream-secondary);
+  margin-bottom: 1.5rem;
+  max-width: 55ch;
+}
+
+/* Events Sub-list */
+.club-events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: rgba(247, 244, 235, 0.04);
+  border: 1px solid var(--hairline-on-dark);
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.club-event-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1.25rem;
+  align-items: baseline;
+}
+
+.club-event-date {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--cream-secondary);
+  opacity: 0.85;
+}
+
+.club-event-name {
+  font-size: 0.9375rem;
+  color: var(--cream);
+  line-height: 1.5;
+}
+
+.club-link-wrap {
+  display: flex;
+  align-items: center;
+}
+
+/* ── 12. RESUME SECTION (Brown Background) ── */
 .resume-wrapper {
   display: flex;
   flex-direction: column;
@@ -872,6 +1021,27 @@ section[id] {
     grid-template-columns: 1fr;
     gap: 0.35rem;
   }
+
+  /* Extracurricular layout on mobile */
+  .extra-group-inner {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 2.25rem 0;
+  }
+
+  .extra-medal-row {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .medal-word {
+    min-width: unset;
+  }
+
+  .club-event-row {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -887,8 +1057,11 @@ section[id] {
     gap: 1.5rem;
   }
 
-  .hero-photo-frame {
-    max-width: 250px;
+  .hero-photo-ring,
+  .hero-photo {
+    width: 200px;
+    height: 200px;
+  }
   }
 
   .contact-email {
